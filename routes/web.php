@@ -27,3 +27,4 @@ Route::get('/gemini', function () {
 // Handle the question submission and call the Gemini API
 Route::post('/question', [GeminiController::class, 'index']);
 
+

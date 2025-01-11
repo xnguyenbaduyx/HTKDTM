@@ -48,4 +48,5 @@ class GeminiController extends Controller
             return response()->json(['error' => 'There was an error processing your request.'], 500);
         }
     }
+    
 }

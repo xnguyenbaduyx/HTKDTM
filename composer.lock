@@ -106,6 +106,7 @@
                     "name": "KyleKatarn",
                     "email": "kylekatarnls@gmail.com"
                 }
+                
             ],
             "description": "Types to use Carbon in Doctrine",
             "keywords": [

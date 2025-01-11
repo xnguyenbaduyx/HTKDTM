@@ -22,6 +22,8 @@
     </style>
 </head>
 
+
+
 <body class="bg-gray-900 text-white">
 
     <div class="container mx-auto px-4 h-screen flex flex-col items-center justify-start pt-6">
