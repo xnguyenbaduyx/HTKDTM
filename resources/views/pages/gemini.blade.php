@@ -17,6 +17,7 @@
             line-height: 1.6;
             width: 100%; /* Đảm bảo textarea chiếm toàn bộ chiều rộng */
             box-sizing: border-box; /* Tính cả padding và border vào chiều rộng */
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -61,6 +62,7 @@
                 processData: false,
                 success: function(data) {
                     if (data.question && data.answer) {
+                        let formattedAnswer = formatAnswer(data.answer);
                         $('#chat').prepend(`
                             <div class="bg-gray-800 text-white rounded p-4 mb-4">
                                 <h4 class="font-bold">Question:</h4>
@@ -68,7 +70,7 @@
                             </div>
                             <div class="bg-gray-800 rounded p-4 mb-4">
                                 <h5 class="font-bold text-white">Answer:</h5>
-                                <p class="gemini-answer">${data.answer}</p>
+                                <div class="gemini-answer">${formattedAnswer}</div>
                             </div>
                         `);
                         $('#question').val(''); // Xóa nội dung câu hỏi sau khi gửi thành công
@@ -82,6 +84,14 @@
                 }
             });
         });
+
+        // Hàm để định dạng câu trả lời
+        function formatAnswer(answer) {
+            // Tách câu trả lời thành các đoạn nhỏ
+            let sentences = answer.split('.'); // Tách theo dấu chấm (.) sau mỗi câu
+            let formattedAnswer = sentences.map(sentence => `<p>${sentence.trim()}</p>`).join('');
+            return formattedAnswer;
+        }
     </script>
 
 </body>
