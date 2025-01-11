@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\SupersetTokenController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\GeminiController;
 
 Route::get('/', function () {
     return view('layout');
@@ -17,11 +18,10 @@ Route::get('/map', [MapController::class, 'index'])->name('map');
 Route::get('/test', [SupersetTokenController::class, 'test']);
 Route::get('/search/{query}', [LocationController::class, 'search']);
 Route::get('/reverse/{lat}/{lon}', [LocationController::class, 'reverse']);
-use App\Http\Controllers\GeminiController;
 
 // Display the Gemini page
 Route::get('/gemini', function () {
-    return view('pages.gemini'); // Make sure you have this view in resources/views/pages/gemini.blade.php
+    return view('pages.gemini');
 })->name('gemini');
 
 // Handle the question submission and call the Gemini API

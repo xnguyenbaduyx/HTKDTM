@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-use GeminiAPI\Client as GeminiClient; // Giả sử bạn dùng thư viện này
+use GeminiAPI\Client as GeminiClient; 
 use Illuminate\Support\Facades\Log;
 
 class GeminiController extends Controller
@@ -18,23 +18,13 @@ class GeminiController extends Controller
         $question = $request->input('question');
 
         try {
-            // **Cách 1: Tắt kiểm tra chứng chỉ (CHỈ DÙNG CHO DEBUG)**
-            // $httpClient = new Client([
-            //     'verify' => false
-            // ]);
-            // $client = new GeminiClient(env('GEMINI_API_KEY'), $httpClient);
-
-            // **Cách 2: Sử dụng đường dẫn đến cacert.pem (KHUYẾN NGHỊ HƠN)**
             $httpClient = new Client([
-                'verify' => 'D:\cnw\cacert.pem' // **Đảm bảo đường dẫn này chính xác**
+                'verify' => 'C:\Users\dacso\OneDrive\Máy tính\cacert.pem' 
             ]);
             $client = new GeminiClient(env('GEMINI_API_KEY'), $httpClient);
 
-            // Hoặc nếu thư viện GeminiAPI tự xử lý Guzzle client:
-             //$client = new GeminiClient(env('GEMINI_API_KEY'),['verify' => 'C:\xampp\php\extras\ssl\cacert.pem']);
-
             $response = $client->geminiPro()->generateContent(
-                new \GeminiAPI\Resources\Parts\TextPart($question) // Đảm bảo namespace chính xác
+                new \GeminiAPI\Resources\Parts\TextPart($question) 
             );
 
             $answer = $response->text();

@@ -62,17 +62,10 @@
                     <span>Map</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>ChatBox</span></a>
-            </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('gemini') }}">
                     <i class="fas fa-fw fa-robot"></i>
-                    <span>Gemini</span>
+                    <span>ChatBot</span>
                 </a>
             </li>
 
@@ -172,13 +165,13 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <!-- <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2025</span>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
             <!-- End of Footer -->
 
         </div>
