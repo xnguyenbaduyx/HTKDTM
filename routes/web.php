@@ -17,3 +17,13 @@ Route::get('/map', [MapController::class, 'index'])->name('map');
 Route::get('/test', [SupersetTokenController::class, 'test']);
 Route::get('/search/{query}', [LocationController::class, 'search']);
 Route::get('/reverse/{lat}/{lon}', [LocationController::class, 'reverse']);
+use App\Http\Controllers\GeminiController;
+
+// Display the Gemini page
+Route::get('/gemini', function () {
+    return view('pages.gemini'); // Make sure you have this view in resources/views/pages/gemini.blade.php
+})->name('gemini');
+
+// Handle the question submission and call the Gemini API
+Route::post('/question', [GeminiController::class, 'index']);
+

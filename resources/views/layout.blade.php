@@ -69,6 +69,14 @@
                     <span>ChatBox</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('gemini') }}">
+                    <i class="fas fa-fw fa-robot"></i>
+                    <span>Gemini</span>
+                </a>
+            </li>
+
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -125,7 +133,7 @@
 
 
 
-                    
+
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
