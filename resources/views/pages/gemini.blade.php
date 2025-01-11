@@ -105,6 +105,7 @@
     </style>
 </head>
 
+<<<<<<< HEAD
 <body>
     <div class="chat-wrapper">
         <div class="chat-header">
@@ -116,7 +117,6 @@
                 <!-- Tin nhắn mẫu sẽ được thêm vào đây -->
             </div>
         </div>
-
         <!-- Form gửi tin nhắn -->
         <form id="ask" class="input-container">
             @csrf
@@ -177,6 +177,14 @@
 
             $('#question').val(''); 
         });
+
+        // Hàm để định dạng câu trả lời
+        function formatAnswer(answer) {
+            // Tách câu trả lời thành các đoạn nhỏ
+            let sentences = answer.split('.'); // Tách theo dấu chấm (.) sau mỗi câu
+            let formattedAnswer = sentences.map(sentence => `<p>${sentence.trim()}</p>`).join('');
+            return formattedAnswer;
+        }
     </script>
 </body>
 @endsection
